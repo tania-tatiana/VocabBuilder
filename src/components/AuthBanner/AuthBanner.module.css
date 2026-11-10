@@ -1,0 +1,21 @@
+.authBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.authImage {
+  width: 498px;
+  height: 435px;
+}
+
+.authText {
+  font-weight: 400;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(18, 20, 23, 0.8);
+}

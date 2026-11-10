@@ -1,0 +1,8 @@
+.logoText {
+  font-weight: 600;
+  font-size: 22px;
+
+  /* line-height: 32px; */
+  line-height: 1.45455;
+  color: var(--black);
+}
