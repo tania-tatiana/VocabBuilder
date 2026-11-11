@@ -4,7 +4,7 @@ export default function AuthBanner() {
   return (
     <div className={css.authBanner}>
       <img
-        src="../../../public/authBanner.png"
+        src="/authBanner.png"
         alt="People reading books"
         className={css.authImage}
       />
