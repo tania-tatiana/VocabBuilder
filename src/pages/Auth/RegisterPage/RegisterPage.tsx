@@ -8,8 +8,12 @@ export default function RegisterPage() {
     <div className={css.page}>
       <Logo />
       <div className={css.mainContent}>
-        <RegisterForm />
-        <AuthBanner />
+        <div className={css.form}>
+          <RegisterForm />
+        </div>
+        <div className={css.banner}>
+          <AuthBanner />
+        </div>
       </div>
     </div>
   );

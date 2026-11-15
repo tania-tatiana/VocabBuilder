@@ -7,16 +7,39 @@
 }
 
 .authImage {
-  width: 498px;
-  height: 435px;
+  width: auto;
+  height: 191px;
+  box-sizing: border-box;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .authImage {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .authImage {
+    display: block;
+    width: 498px;
+    height: 435px;
+  }
 }
 
 .authText {
-  font-weight: 400;
-  font-size: 16px;
+  display: none;
+}
 
-  /* line-height: 24px; */
-  line-height: 1.5;
-  text-align: center;
-  color: rgba(18, 20, 23, 0.8);
+@media (min-width: 768px) {
+  .authText {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+
+    /* line-height: 24px; */
+    line-height: 1.5;
+    text-align: center;
+    color: rgba(18, 20, 23, 0.8);
+  }
 }

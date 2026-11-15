@@ -1,13 +1,20 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  padding: 16px;
+  gap: 8px;
 }
 
 @media (min-width: 768px) {
   .page {
-    padding: 24px;
+    gap: 140px;
+    padding: 24px 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page {
+    gap: 64px;
+    padding: 24px 100px;
   }
 }
 
@@ -20,9 +27,25 @@
   flex: 1;
 }
 
+.form {
+  order: 2;
+}
+
+.banner {
+  order: 1;
+}
+
 @media (min-width: 768px) {
   .mainContent {
     gap: 98px;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .form {
+    order: 0;
   }
 }
 
@@ -30,5 +53,14 @@
   .mainContent {
     flex-direction: row;
     gap: 80px;
+  }
+
+  .form {
+    order: 1;
+  }
+
+  .banner {
+    order: 2;
+    display: block;
   }
 }
