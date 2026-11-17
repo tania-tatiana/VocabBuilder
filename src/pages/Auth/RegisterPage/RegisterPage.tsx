@@ -15,8 +15,10 @@ export default function RegisterPage() {
           <div className={css.banner}>
             <AuthBanner />
           </div>
+          <p className={css.authText}>
+            Word · Translation · Grammar · Progress
+          </p>
         </div>
-        <p className={css.authText}>Word · Translation · Grammar · Progress</p>
       </div>
     </div>
   );

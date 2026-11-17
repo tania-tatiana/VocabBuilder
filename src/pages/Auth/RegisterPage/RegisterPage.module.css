@@ -71,6 +71,10 @@
   .form {
     order: 0;
   }
+
+  .bannerWrapper {
+    order: 1;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -84,8 +88,11 @@
     order: 1;
   }
 
-  .banner {
+  .bannerWrapper {
     order: 2;
-    display: flex;
+  }
+
+  .banner {
+    display: block;
   }
 }
