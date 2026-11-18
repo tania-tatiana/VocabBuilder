@@ -85,6 +85,31 @@
   background-color: transparent;
 }
 
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  stroke: #121417;
+  fill: none;
+}
+
 .buttons {
   display: flex;
   flex-direction: column;
