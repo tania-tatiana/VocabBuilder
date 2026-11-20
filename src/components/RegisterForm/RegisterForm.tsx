@@ -1,5 +1,17 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import css from './RegisterForm.module.css';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .min(2, 'Name must be at least 2 characters')
+    .required('Name is required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  password: Yup.string()
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
+});
 
 export default function RegisterForm() {
   const [name, setName] = useState('');
@@ -11,6 +23,15 @@ export default function RegisterForm() {
     event.preventDefault();
     console.log({ name, email, password });
   };
+
+  const formik = useFormik({
+    initialValues: { name: '', email: '', password: '' },
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <div className={css.text}>
