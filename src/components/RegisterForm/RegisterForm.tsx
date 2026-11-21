@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { useState } from 'react';
 import css from './RegisterForm.module.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -14,15 +14,7 @@ const validationSchema = Yup.object({
 });
 
 export default function RegisterForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log({ name, email, password });
-  };
 
   const formik = useFormik({
     initialValues: { name: '', email: '', password: '' },
@@ -33,7 +25,7 @@ export default function RegisterForm() {
   });
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={formik.handleSubmit}>
       <div className={css.text}>
         <h1 className={css.title}>Register</h1>
         <p className={css.subtitle}>
@@ -48,25 +40,28 @@ export default function RegisterForm() {
           className={css.input}
           placeholder="Name"
           name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          value={formik.values.name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
         <input
           type="text"
           className={css.input}
           placeholder="Email"
           name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
         <div className={css.passwordWrapper}>
           <input
             type={showPassword ? 'text' : 'password'}
             className={css.input}
             placeholder="Password"
-            name="Password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
           <button
             type="button"
@@ -77,8 +72,8 @@ export default function RegisterForm() {
               <use
                 href={
                   showPassword
-                    ? '/public/sprite.svg#icon-eye'
-                    : '/public/sprite.svg#icon-eye-off'
+                    ? '/sprite.svg#icon-eye'
+                    : '/sprite.svg#icon-eye-off'
                 }
               />
             </svg>
