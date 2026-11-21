@@ -35,25 +35,42 @@ export default function RegisterForm() {
       </div>
 
       <div className={css.inputs}>
-        <input
-          type="text"
-          className={css.input}
-          placeholder="Name"
-          name="name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        <input
-          type="text"
-          className={css.input}
-          placeholder="Email"
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        <div className={css.passwordWrapper}>
+        <div className={css.inputWrap}>
+          <input
+            type="text"
+            className={css.input}
+            placeholder="Name"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+
+          {formik.touched.name && formik.errors.name ? (
+            <p className={css.error}>Error name</p>
+          ) : (
+            formik.touched.name &&
+            !formik.errors.name && <p className={css.success}>Success name</p>
+          )}
+        </div>
+        <div className={css.inputWrap}>
+          <input
+            type="text"
+            className={css.input}
+            placeholder="Email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <p className={css.error}>Error email</p>
+          ) : (
+            formik.touched.email &&
+            !formik.errors.email && <p className={css.success}>Success email</p>
+          )}
+        </div>
+        <div className={css.inputWrap}>
           <input
             type={showPassword ? 'text' : 'password'}
             className={css.input}
@@ -63,6 +80,14 @@ export default function RegisterForm() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
+          {formik.touched.password && formik.errors.password ? (
+            <p className={css.error}>Error password</p>
+          ) : (
+            formik.touched.password &&
+            !formik.errors.password && (
+              <p className={css.success}>Success passsword</p>
+            )
+          )}
           <button
             type="button"
             className={css.eyeBtn}

@@ -85,9 +85,35 @@
   background-color: transparent;
 }
 
-.passwordWrapper {
+.inputWrap {
   position: relative;
   width: 100%;
+}
+
+.error {
+  position: absolute;
+  bottom: -18px;
+
+  font-weight: 400;
+  font-size: 12px;
+
+  /* line-height: 18px; */
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #d80027;
+}
+
+.success {
+  position: absolute;
+  bottom: -18px;
+
+  font-weight: 400;
+  font-size: 12px;
+
+  /* line-height: 18px; */
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #3cbf61;
 }
 
 .eyeBtn {
