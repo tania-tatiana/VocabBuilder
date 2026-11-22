@@ -2,6 +2,7 @@ import { useState } from 'react';
 import css from './RegisterForm.module.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import clsx from 'clsx';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -38,7 +39,11 @@ export default function RegisterForm() {
         <div className={css.inputWrap}>
           <input
             type="text"
-            className={css.input}
+            className={clsx(
+              css.input,
+              formik.touched.name && formik.errors.name && css.inputError,
+              formik.touched.name && !formik.errors.name && css.inputSuccess
+            )}
             placeholder="Name"
             name="name"
             value={formik.values.name}
@@ -56,7 +61,11 @@ export default function RegisterForm() {
         <div className={css.inputWrap}>
           <input
             type="text"
-            className={css.input}
+            className={clsx(
+              css.input,
+              formik.touched.email && formik.errors.email && css.inputError,
+              formik.touched.email && !formik.errors.email && css.inputSuccess
+            )}
             placeholder="Email"
             name="email"
             value={formik.values.email}
@@ -73,7 +82,15 @@ export default function RegisterForm() {
         <div className={css.inputWrap}>
           <input
             type={showPassword ? 'text' : 'password'}
-            className={css.input}
+            className={clsx(
+              css.input,
+              formik.touched.password &&
+                formik.errors.password &&
+                css.inputError,
+              formik.touched.password &&
+                !formik.errors.password &&
+                css.inputSuccess
+            )}
             placeholder="Password"
             name="password"
             value={formik.values.password}

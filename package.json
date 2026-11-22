@@ -12,6 +12,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "formik": "^2.4.9",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
