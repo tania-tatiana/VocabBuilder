@@ -52,10 +52,23 @@ export default function RegisterForm() {
           />
 
           {formik.touched.name && formik.errors.name ? (
-            <p className={css.error}>Error name</p>
+            <div className={css.errorWrapper}>
+              <svg className={css.iconError} width={16} height={16}>
+                <use href="/sprite.svg#icon-warning-field" />
+              </svg>
+
+              <p className={css.error}>Error name</p>
+            </div>
           ) : (
             formik.touched.name &&
-            !formik.errors.name && <p className={css.success}>Success name</p>
+            !formik.errors.name && (
+              <div className={css.successWrapper}>
+                <svg className={css.iconSuccess} width={16} height={16}>
+                  <use href="/sprite.svg#icon-success-field" />
+                </svg>
+                <p className={css.success}>Success name</p>
+              </div>
+            )
           )}
         </div>
         <div className={css.inputWrap}>
@@ -73,10 +86,24 @@ export default function RegisterForm() {
             onBlur={formik.handleBlur}
           />
           {formik.touched.email && formik.errors.email ? (
-            <p className={css.error}>Error email</p>
+            <div className={css.errorWrapper}>
+              <svg className={css.iconError} width={16} height={16}>
+                <use href="/sprite.svg#icon-warning-field" />
+              </svg>
+
+              <p className={css.error}>Error email</p>
+            </div>
           ) : (
             formik.touched.email &&
-            !formik.errors.email && <p className={css.success}>Success email</p>
+            !formik.errors.email && (
+              <div className={css.successWrapper}>
+                <svg className={css.iconSuccess} width={16} height={16}>
+                  <use href="/sprite.svg#icon-success-field" />
+                </svg>
+
+                <p className={css.success}>Success email</p>
+              </div>
+            )
           )}
         </div>
         <div className={css.inputWrap}>
@@ -98,11 +125,23 @@ export default function RegisterForm() {
             onBlur={formik.handleBlur}
           />
           {formik.touched.password && formik.errors.password ? (
-            <p className={css.error}>Error password</p>
+            <div className={css.errorWrapper}>
+              <svg className={css.iconError} width={16} height={16}>
+                <use href="/sprite.svg#icon-warning-field" />
+              </svg>
+
+              <p className={css.error}>Error password</p>
+            </div>
           ) : (
             formik.touched.password &&
             !formik.errors.password && (
-              <p className={css.success}>Success passsword</p>
+              <div className={css.successWrapper}>
+                <svg className={css.iconSuccess} width={16} height={16}>
+                  <use href="/sprite.svg#icon-success-field" />
+                </svg>
+
+                <p className={css.success}>Success passsword</p>
+              </div>
             )
           )}
           <button
